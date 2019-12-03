@@ -1,0 +1,19 @@
+{
+  "name": "serverless-template",
+  "version": "1.0.0",
+  "description": "Serverless Template Start Project",
+  "main": "src/index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solvimm/serverless-template"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "serverless-iam-roles-per-function": "^1.0.4"
+  }
+}

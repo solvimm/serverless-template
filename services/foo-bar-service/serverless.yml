@@ -1,0 +1,39 @@
+service: foo-bar-service
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  stackTags:
+    service: ${self:service}-${self:custom.stage}
+  region: us-east-1
+  logRetentionInDays: 60
+  logs:
+    restApi: true
+  tracing:
+    apiGateway: true
+    lambda: true
+  
+package:
+  individually: true
+  exclude:
+    - test/**
+    - buildspec.yml
+
+functions:
+  foo:
+    handler: src/foo/handler.handler
+    runtime: nodejs12.x
+    memorySize: 256
+    timeout: 2
+  bar:
+    handler: src/bar/handler.handler
+    runtime: python3.8
+    memorySize: 256
+    timeout: 2
+  
+plugins:
+  - serverless-iam-roles-per-function

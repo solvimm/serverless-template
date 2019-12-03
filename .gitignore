@@ -1,0 +1,48 @@
+# Mac files
+.DS_Store
+
+# package directories
+node_modules
+jspm_packages
+gitflow
+.webpack
+
+# Serverless directories
+.serverless
+
+.build
+
+# Log mocha
+*.log
+*.log.*
+
+#Enviroment Variable
+.env
+
+#Credentials
+.credentials
+credentials
+
+#Files
+*.gz
+
+## Visual Studio
+.vscode/
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/*.py
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
