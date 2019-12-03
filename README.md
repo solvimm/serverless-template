@@ -1,2 +1,1 @@
-# serverless-template
-Serverless Template Start Project
+# Serverless Template Start Project

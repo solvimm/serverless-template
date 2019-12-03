@@ -1,1 +1,3 @@
-# Serverless Template Start Project
+# foo-bar-service
+
+
