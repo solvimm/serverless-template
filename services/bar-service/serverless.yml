@@ -3,6 +3,8 @@ service: bar-service
 custom:
   stage: ${opt:stage, self:provider.stage}
   region: ${opt:region, self:provider.region}
+  pythonRequirements:
+    dockerizePip: non-linux
   
 provider:
   name: aws
@@ -32,3 +34,4 @@ functions:
 plugins:
   - serverless-iam-roles-per-function
   - serverless-plugin-aws-alerts
+  - serverless-python-requirements

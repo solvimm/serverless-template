@@ -1,3 +1,3 @@
-# foo-bar-service
+# foo-service
 
-Pasta com um exemplo de projeto com Serverless Framework
+Pasta com um exemplo de projeto em NodeJS com Serverless Framework

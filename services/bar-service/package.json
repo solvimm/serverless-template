@@ -14,6 +14,7 @@
     "serverless-plugin-aws-alerts": "^1.4.0"
   },
   "devDependencies": {
-    "serverless-iam-roles-per-function": "^1.0.4"
+    "serverless-iam-roles-per-function": "^1.0.4",
+    "serverless-python-requirements": "^5.1.0"
   }
 }
