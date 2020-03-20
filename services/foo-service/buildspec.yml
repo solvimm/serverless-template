@@ -1,0 +1,14 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_XRAY_CONTEXT_MISSING: LOG_ERROR
+phases:
+  install:
+    commands:
+      - cd services/foo-service/
+      - npm install
+      - npm install -g serverless
+  build:
+    commands:
+      - serverless deploy -s $STAGE

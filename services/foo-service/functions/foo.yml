@@ -1,0 +1,22 @@
+handler: src/foo/handler.handler
+runtime: nodejs12.x
+memorySize: 256
+timeout: 2
+alarms:
+  - functionDuration
+  - name: functionDuration
+    threshold: 30000
+    description: ${self:service}-${self:custom.stage}-foo Lambda Timeout - WARNING
+  - functionErrors
+  - name: functionErrors 
+    description: ${self:service}-${self:custom.stage}-foo Lambda Error - ERROR
+  - functionThrottles
+  - name: functionThrottles 
+    description: ${self:service}-${self:custom.stage}-foo Lambda Throttle - ERROR
+iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - xray:PutTraceSegments
+      - xray:PutTelemetryRecords
+    Resource:
+      - "*"

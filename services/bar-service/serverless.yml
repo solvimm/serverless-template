@@ -1,0 +1,34 @@
+service: bar-service
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  region: ${opt:region, self:provider.region}
+  
+provider:
+  name: aws
+  runtime: python3.7
+  stage: dev
+  stackTags:
+    service: ${self:service}-${self:custom.stage}
+  region: us-east-1
+  logRetentionInDays: 60
+  logs:
+    restApi: true
+  tracing:
+    apiGateway: true
+    lambda: true
+  
+package:
+  individually: true
+  exclude:
+    - test/**
+    - buildspec.yml
+    - functions/**
+    - README.md
+
+functions:
+  bar: ${file(functions/bar.yml)}
+    
+plugins:
+  - serverless-iam-roles-per-function
+  - serverless-plugin-aws-alerts

@@ -6,7 +6,7 @@ env:
 phases:
   install:
     commands:
-      - cd services/foo-bar-service/
+      - cd services/bar-service/
       - npm install
       - npm install -g serverless
   build:

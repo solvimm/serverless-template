@@ -1,7 +1,8 @@
-service: foo-bar-service
+service: foo-service
 
 custom:
   stage: ${opt:stage, self:provider.stage}
+  region: ${opt:region, self:provider.region}
   
 provider:
   name: aws
@@ -22,18 +23,12 @@ package:
   exclude:
     - test/**
     - buildspec.yml
+    - functions/**
+    - README.md
 
 functions:
-  foo:
-    handler: src/foo/handler.handler
-    runtime: nodejs12.x
-    memorySize: 256
-    timeout: 2
-  bar:
-    handler: src/bar/handler.handler
-    runtime: python3.8
-    memorySize: 256
-    timeout: 2
-  
+  foo: ${file(functions/foo.yml)}
+    
 plugins:
   - serverless-iam-roles-per-function
+  - serverless-plugin-aws-alerts

@@ -1,0 +1,22 @@
+handler: src/bar/handler.handler
+runtime: python3.7
+memorySize: 256
+timeout: 2
+alarms:
+  - functionDuration
+  - name: functionDuration
+    threshold: 30000
+    description: ${self:service}-${self:custom.stage}-bar Lambda Timeout - WARNING
+  - functionErrors
+  - name: functionErrors 
+    description: ${self:service}-${self:custom.stage}-bar Lambda Error - ERROR
+  - functionThrottles
+  - name: functionThrottles 
+    description: ${self:service}-${self:custom.stage}-bar Lambda Throttle - ERROR
+iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - xray:PutTraceSegments
+      - xray:PutTelemetryRecords
+    Resource:
+      - "*"
