@@ -13,4 +13,4 @@ Alguns plugins do Serverless Framework que são comuns nos projetos e são recom
 - serverless-plugin-aws-alerts: Cria alarmes para cada função lambda
 - serverless-python-requirements: Baixa dependencias de modulos Python pelo requirements.txt
 
-**OBS** As nomenclaturas de pastas dos projetos Serverless são somente exemplos, siga a nomenclatura que melhor represente o seu projeto real
+**OBS:** As nomenclaturas de pastas dos projetos Serverless são somente exemplos, siga a nomenclatura que melhor represente o seu projeto real
